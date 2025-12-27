@@ -1,0 +1,72 @@
+/* ----------------------------------
+   HIGH CONTRAST MODE
+---------------------------------- */
+.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast button,
+.high-contrast input,
+.high-contrast select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.high-contrast .leaflet-container {
+  filter: contrast(160%) brightness(160%);
+  border: 3px solid white !important;
+}
+
+/* ----------------------------------
+   LARGE ICONS MODE
+---------------------------------- */
+.large-icons button,
+.large-icons select,
+.large-icons input {
+  font-size: 24px !important;
+  padding: 18px !important;
+}
+
+.large-icons .voice-btn {
+  font-size: 32px !important;
+  padding: 18px !important;
+}
+
+.large-icons .hazard-popup {
+  font-size: 22px !important;
+}
+
+/* ----------------------------------
+   LARGE BUTTONS MODE
+---------------------------------- */
+.large-buttons button {
+  padding: 22px !important;
+  font-size: 22px !important;
+  border-radius: 12px !important;
+}
+
+/* ----------------------------------
+   BLIND MODE (VISUAL DISABLED)
+---------------------------------- */
+.blind-mode {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.blind-mode * {
+  outline: none !important;
+}
+
+.blind-mode button {
+  font-size: 26px !important;
+  padding: 25px !important;
+  background: #111 !important;
+  color: yellow !important;
+  border: 3px solid yellow !important;
+}
+
+.blind-mode .leaflet-container {
+  filter: contrast(200%) brightness(120%) grayscale(100%);
+}

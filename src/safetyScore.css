@@ -1,0 +1,40 @@
+.safety-widget-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.gauge {
+  width: 150px;
+  height: 75px;
+  overflow: hidden;
+}
+
+.gauge-fill {
+  width: 150px;
+  height: 150px;
+  background: #27AE60;
+  border-radius: 50%;
+  transform-origin: center bottom;
+  transition: 0.4s ease-in-out;
+}
+
+.gauge-cover {
+  width: 100px;
+  height: 50px;
+  background: #fff;
+  border-radius: 0 0 50px 50px;
+  position: relative;
+  top: -100px;
+  left: 25px;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.score-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}

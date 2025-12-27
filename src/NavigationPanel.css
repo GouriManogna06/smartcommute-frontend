@@ -1,0 +1,18 @@
+.nav-panel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 18px;
+  box-shadow: 0px -4px 12px rgba(0,0,0,0.15);
+}
+
+.close-nav {
+  width: 100%;
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+}

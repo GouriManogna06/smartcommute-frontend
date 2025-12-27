@@ -1,0 +1,306 @@
+/* ==========================================
+   ABSTRACT WAVES BACKGROUND
+========================================== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+/* Blue glowing wave */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: -80px;
+  width: 550px;
+  height: 550px;
+  background: rgba(0, 102, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: -1;
+}
+
+/* Pink glowing wave */
+.app-container::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  right: -80px;
+  width: 550px;
+  height: 550px;
+  background: rgba(255, 0, 102, 0.18);
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: -1;
+}
+
+/* ==========================================
+   HEADER + PROFILE
+========================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 25px;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #003e7a;
+}
+
+.profile-btn {
+  font-size: 24px;
+  background: white;
+  border: 2px solid #005eff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+/* ==========================================
+   OFFLINE BANNER
+========================================== */
+.offline-banner {
+  text-align: center;
+  background: #ff3b3b;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+}
+
+/* ==========================================
+   LANGUAGE + FONT CONTROLS
+========================================== */
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 10px 25px;
+}
+
+.controls select {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 2px solid #005eff;
+  font-size: 14px;
+}
+
+.font-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================
+   VOICE CONTROL BUTTONS
+========================================== */
+.voice-controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.speak-btn, .listen-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.speak-btn {
+  background: #0071ff;
+  color: white;
+}
+
+.listen-btn {
+  background: #00c853;
+  color: white;
+}
+
+/* ==========================================
+   CATEGORY GRID
+========================================== */
+.cat-title {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #003e7a;
+  font-weight: 600;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  border-color: #007bff;
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.category-card p {
+  margin: 0;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ==========================================
+   ROUTE INPUT BOX
+========================================== */
+.route-box {
+  margin: 15px 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+}
+
+.route-box label {
+  display: block;
+  font-size: 14px;
+  color: #003e7a;
+  margin-bottom: 4px;
+}
+
+.route-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #dce7f9;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.route-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.safe-btn {
+  width: 100%;
+  padding: 12px;
+  background: #00c853;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ==========================================
+   SAFETY PANEL
+========================================== */
+.safety-panel {
+  margin: 20px;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 3px 12px rgba(0,0,0,0.11);
+}
+
+.safety-panel p {
+  margin: 6px 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ==========================================
+   MAP WRAPPER
+========================================== */
+.map-wrapper {
+  width: 92%;
+  margin: 20px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+/* ==========================================
+   BOOKING SCREEN SUPPORT
+========================================== */
+.booking-wrapper {
+  background: white;
+  padding: 20px;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+  margin-top: 10px;
+}
+
+.book-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ==========================================
+   RESPONSIVE (MOBILE)
+========================================== */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .voice-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .route-box {
+    padding: 15px;
+  }
+}

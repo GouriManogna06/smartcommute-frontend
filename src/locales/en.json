@@ -1,0 +1,29 @@
+{
+  "title": "Smart Commute for All",
+  "choose_category": "Choose Your Travel Category",
+
+  "general": "General",
+  "special": "Specially Abled",
+  "helper": "With Helper",
+  "pet": "Pet Owners",
+  "child": "Parents with Children",
+  "infant": "Parents with Infants",
+
+  "speak": "Speak",
+  "listen": "Listen",
+
+  "source": "Source",
+  "destination": "Destination",
+  "get_route": "Get Route",
+  "safer_route": "Safer Route",
+  "start_nav": "Start Navigation",
+
+  "hazards": "Hazards",
+  "ai_risks": "AI Risks",
+  "safety_score": "Safety Score",
+
+  "profile": "Profile",
+  "logout": "Logout",
+
+  "offline": "You are offline — using cached route."
+}
