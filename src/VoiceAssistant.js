@@ -1,70 +1,69 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
-function VoiceAssistant({ speakText, onCommand }) {
+const VoiceAssistant = ({ onCategory }) => {
   const [listening, setListening] = useState(false);
+  const recognitionRef = useRef(null);
 
-  // Speak functionality
-  const handleSpeak = () => {
-    window.speechSynthesis.cancel();
-    const msg = new SpeechSynthesisUtterance(speakText);
+  const speakCategories = () => {
+    const msg = new SpeechSynthesisUtterance(
+      "Please say a category. You can choose: General, Specially Abled, With Helper, Pet Owners, Parents with Children, or Parents with Infants."
+    );
     msg.lang = "en-IN";
+    window.speechSynthesis.cancel();
     window.speechSynthesis.speak(msg);
   };
 
-  // Listen functionality
-  const handleListen = () => {
-    window.speechSynthesis.cancel(); // stop speaking if speaking
+  const startListening = () => {
+    window.speechSynthesis.cancel();
 
-    const recognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    if (!recognition) {
-      alert("Your browser does not support speech recognition.");
+    if (!("webkitSpeechRecognition" in window)) {
+      alert("Voice recognition not supported");
       return;
     }
 
-    const listener = new recognition();
-    listener.lang = "en-IN";
-    listener.start();
+    recognitionRef.current = new window.webkitSpeechRecognition();
+    recognitionRef.current.lang = "en-IN";
+    recognitionRef.current.interimResults = false;
+    recognitionRef.current.continuous = false;
+
     setListening(true);
 
-    listener.onresult = (event) => {
-      const transcript = event.results[0][0].transcript.toLowerCase();
+    recognitionRef.current.onresult = (event) => {
+      const text = event.results[0][0].transcript.toLowerCase();
+      console.log("Heard:", text);
       setListening(false);
-      onCommand(transcript);
+
+      if (text.includes("general")) onCategory("general");
+      else if (text.includes("special")) onCategory("special");
+      else if (text.includes("helper")) onCategory("helper");
+      else if (text.includes("pet")) onCategory("pet");
+      else if (text.includes("child")) onCategory("child");
+      else if (text.includes("infant")) onCategory("infant");
+      else alert("Category not recognized");
     };
 
-    listener.onerror = () => {
+    recognitionRef.current.onerror = () => {
       setListening(false);
     };
+
+    recognitionRef.current.start();
   };
 
   return (
-    <div style={{ margin: "20px 0" }}>
-      <button
-        onClick={handleSpeak}
-        style={{
-          padding: "10px 15px",
-          marginRight: "10px",
-          background: "#007bff",
-          color: "#fff"
-        }}
-      >
+    <div className="voice-box">
+      <button className="speak-btn" onClick={speakCategories}>
         🔊 Speak
       </button>
 
       <button
-        onClick={handleListen}
-        style={{
-          padding: "10px 15px",
-          background: listening ? "red" : "green",
-          color: "#fff"
-        }}
+        className="listen-btn"
+        onClick={startListening}
+        style={{ backgroundColor: listening ? "red" : "green" }}
       >
-        🎤 Listen
+        🎤 {listening ? "Listening..." : "Listen"}
       </button>
     </div>
   );
-}
+};
 
 export default VoiceAssistant;
