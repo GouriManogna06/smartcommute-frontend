@@ -18,7 +18,8 @@ import { GiJourney } from "react-icons/gi";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-const BACKEND_URL = "https://smartcommute-backend-production.up.railway.app";
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 
 const App = () => {
   const { t, i18n } = useTranslation();
